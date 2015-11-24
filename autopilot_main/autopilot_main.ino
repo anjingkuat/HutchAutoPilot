@@ -15,6 +15,7 @@ void setup() {
 }
 
 void loop() {
+  int z = 0;
   //The following items must be performed, but not at the same frequency
     //interpret external commands
       //determine flight mode (manual, assisted manual, gps waypoint, dead reckoning, 
