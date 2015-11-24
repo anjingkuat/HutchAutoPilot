@@ -1,0 +1,39 @@
+This is a summary of the autopilot project and a space where I will specify the functionality and the architecture.
+
+I am planning on designing an autopilot for a fixed wing aircraft that is capable of the following functions:
+
+	maintain a specified course and altitude
+	gather, interpret and act upon weather updates from an airport, specifically barometric pressure/density altitude information
+	navigate using GPS waypoints, by calculating and flying a specific path
+	interpret a mission file that can be accessed via sd card
+	communicate telemetry data to a ground station
+	receive commands from a ground station
+	move into and out of a hover condition
+	return to home on a loss of signal
+	
+The autopilot will be able to communicate with the following sensors:
+
+	3-axis gyroscope
+	3-axis accelerometer
+	3-axis magnetometer
+	barometer
+	GPS
+	airspeed sensor
+	Air Traffic Control (ATC)
+	
+These sensors will provide the autopilot with the following information:
+
+	3 DOF orientation information (from the gyroscope and accelerometer)
+	3 DOF motion information (from the accelerometer, GPS, barometer, airspeed sensor, and ATC)
+	A vector to the magnetic north pole (from the magnetometer)
+	Altitude above sea level (ASL)(from the GPS and barometer)
+	Altitude above ground level (AGL) (from the barometer, ATC, and any topographical map info available)
+	Location on the Earth's surface (GPS and dead reckoning from imu)
+	
+The general sequence of events will go something like this:
+
+	acquire sensor data
+	determine desired state
+	determine current state
+	
+	
